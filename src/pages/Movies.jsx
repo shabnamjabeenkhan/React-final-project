@@ -15,19 +15,20 @@ const [posts, setPosts] = useState([]);
 
 
 
-useEffect (() => {
- axios.get("https://www.omdbapi.com/?i=tt3896198&apikey=8e3ddd4c").then((data) => {
-        setPosts(data.data)
-        console.log(data)
-       })
+
+
+
+useEffect(() => {
+async function fetchPosts(id) {
+ const {data} =  await axios.get("https://www.omdbapi.com/?i=tt3896198&apikey=8e3ddd4c")
+ setPosts(data)
+
+}
+fetchPosts()
 }, [])
 
 
 
-
-
-     
-        
 
 
 
@@ -61,7 +62,7 @@ useEffect (() => {
          Browse Our Movies
          </h1>
          <label className="label" for="Search by keyword">
-         <input className="input" type="text" placeholder="Search by Keyword" onChange="onSearchChange(event)"/>
+         <input className="input" type="text"  placeholder="Search by Keyword"/>
          <img className="icon" src="Assets/search icon.png" alt=""/>
          </label>
          </div> 
@@ -73,34 +74,9 @@ useEffect (() => {
                 Search results:
                 </h1>
                 </div>
-                
-
-                
-
-                <div className="row">
-                <div className="user-list">
-                <div className="user">
-                <div className="user-card">
-                <div className="user-card__container">
-                <h3>Poster: <b>Poster</b> </h3>
-                <p>Title: <b>Title</b> </p>
-                <p>Type: <b>Type</b></p>
-                <p>Year: <b>Year</b></p>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-               
-               
-                {
-                    posts?.map((post) => {
-                      return  <Posts title={post.title} type={post.type} year={post.year} />
-                      
-                    })
-                }
-                
-            </>
+              
+                   
+   </>
 
 
 

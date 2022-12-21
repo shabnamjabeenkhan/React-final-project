@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Posts from '../components/Posts';
 
 
@@ -9,33 +9,40 @@ import Posts from '../components/Posts';
 
 
 const Movies = () => {
-const [posts, setPosts] = useState([]);
+const [posts, setPosts] = useState({});
+const { id } = useParams()
+const [searchId, setSearchId] = useState(id)
 
+
+
+
+
+
+       function onSearch() {
+        fetchPosts(searchId)
+       }
+       async function fetchPosts(userId) {
+        const {data} =  await axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=8e3ddd4c&s=${userId || id}`)
+        setPosts(data)
+        console.log(data)
        
+       }
 
 
 
 
 
 
-useEffect(() => {
-async function fetchPosts(id) {
- const {data} =  await axios.get("https://www.omdbapi.com/?i=tt3896198&apikey=8e3ddd4c")
- setPosts(data)
-
-}
-fetchPosts()
-}, [])
+        useEffect(() => {
+        fetchPosts()
+        }, [])
 
 
 
 
 
 
-
-
-
-        return ( 
+        return  (
       
         <>
         <div className="bg_color">
@@ -61,8 +68,12 @@ fetchPosts()
          <h1 className="browse">
          Browse Our Movies
          </h1>
-         <label className="label" for="Search by keyword">
-         <input className="input" type="text"  placeholder="Search by Keyword"/>
+         {/* <label  onClick={() => onSearch()} name='search' className="label" htmlFor='search'>
+         <input className="input" type="text" value={searchId || ''} onChange={(event) => setSearchId(event.target.value) } placeholder="Search by Keyword"/>
+         <img className="icon" src="Assets/search icon.png" alt=""/>
+         </label> */}
+                  <label  onClick={() => onSearch()} name='search' className="label" htmlFor='search'>
+         <input onClick={() => onSearch()} onKeyUp={(e) => {console.log(e); if (e.code === "Enter") {setSearchId(e.target.value)}}} className="input" type="text" value={searchId || ''} onChange={(event) => setSearchId(event.target.value) } placeholder="Search by Keyword"/>
          <img className="icon" src="Assets/search icon.png" alt=""/>
          </label>
          </div> 
@@ -74,8 +85,44 @@ fetchPosts()
                 Search results:
                 </h1>
                 </div>
-              
-                   
+          {
+            posts.Search?.map((post, index) => {
+              return  (
+                <div className='container'>
+                <div class="row">
+                <div class="user-list">
+                  <div class="user">
+                    <div class="user-card">
+                      <div class="user-card__container">
+                      <img src={post.Poster} alt={`Poster for ${post.Title}`} />
+                          <p>Title: <b>{post.Title}</b> </p>
+                          <p>Type: <b>{post.Type}</b></p>
+                          <p>Year: <b>{post.Year}</b></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+
+
+              //   <div key={index} className="user">
+              // <div className="user-card">
+              // <div className="user-card__container"> 
+              // <img src={post.Poster} alt={`Poster for ${post.Title}`} />
+              // <p>Title: <b>{post.Title}</b> </p>
+              // <p>Type: <b>{post.Type}</b></p>
+              // <p>Year: <b>{post.Year}</b></p>
+              // </div>
+              // </div>
+              // </div>
+         
+
+              )
+            })
+          }
+     
    </>
 
 

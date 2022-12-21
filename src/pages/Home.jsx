@@ -26,8 +26,8 @@ export default function Home() {
                 <h1 className="browse">
                 Browse Our Movies
                 </h1>
-                <label className="label" for="Search by keyword">
-                <input className="input" type="text" placeholder="Search by Keyword"/>
+                <label className="label" htmlFor='search'>
+                <input name='search' className="input" type="text" placeholder="Search by Keyword"/>
                 <img className="icon" src="Assets/search icon.png" alt=""/>
                 </label>
                 </div> 

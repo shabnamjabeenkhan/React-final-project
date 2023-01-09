@@ -213,5 +213,10 @@ nav {
 .container {
   display: flex;
   justify-content: space-between;
+
+}
+
+.user{
+  display: flex;
   flex-direction: column;
 }

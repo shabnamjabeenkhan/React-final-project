@@ -105,7 +105,7 @@ const Movies = () => {
                         alt={`Poster for ${post.Poster}`}
                       />
                       <p>
-                        Title: <b>{post.Title}</b>{" "}
+                        Title: <b>{post.Title}</b>
                       </p>
                       <p>
                         Type: <b>{post.Type}</b>

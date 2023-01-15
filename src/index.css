@@ -180,11 +180,18 @@ nav {
   flex-wrap: wrap;
   /**/
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  
+  
 }
 
 .user {
-  width: 50%;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
 }
+
 
 .user-card {
   background-color: #fff;
@@ -196,6 +203,11 @@ nav {
   width: 400px;
   display: flex;
   flex-direction: column;
+    max-width: 400px;
+    max-height: 370px;
+    padding: 5px;
+   
+  
 }
 
 .user-card:hover {
@@ -211,12 +223,30 @@ nav {
 }
 
 .container {
-  display: flex;
-  justify-content: space-between;
-
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
-.user{
+
+
+img {
+  max-width: 250px;
+  max-height: 250px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+
+.search__results{
+  margin-bottom: 40px;
+}
+.user-card:nth-child(-n+6) {
+  display: block;
+}
+
+.user-card:nth-child(n+6) {
+  display: none;
 }

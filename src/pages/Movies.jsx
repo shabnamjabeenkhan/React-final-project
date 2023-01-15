@@ -5,9 +5,16 @@ import { Link, useParams } from "react-router-dom";
 import Posts from "../components/Posts";
 
 const Movies = () => {
+
+ 
+
+
+  
   const [posts, setPosts] = useState({});
   const { id } = useParams();
   const [searchId, setSearchId] = useState(id);
+
+  
 
   function onSearch() {
     fetchPosts(searchId);
@@ -100,7 +107,7 @@ const Movies = () => {
                 return (
                   <div className="user-card">
                     <div className="user-card__container">
-                      <img
+                      <img className="imgs"
                         src={post.Poster}
                         alt={`Poster for ${post.Poster}`}
                       />

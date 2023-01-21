@@ -2,23 +2,21 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Posts from "../components/Posts";
+import SearchIcon from "@mui/icons-material/Search";
 
 const Movies = () => {
+  const navigate = useNavigate();
 
- 
-
-
-  
   const [posts, setPosts] = useState({});
   const { id } = useParams();
   const [searchId, setSearchId] = useState(id);
 
-  
-
   function onSearch() {
     fetchPosts(searchId);
   }
+
   async function fetchPosts(userId) {
     const { data } = await axios.get(
       `http://www.omdbapi.com/?i=tt3896198&apikey=8e3ddd4c&s=${userId || id}`
@@ -67,32 +65,33 @@ const Movies = () => {
           </ul>
         </nav>
         <h1 className="browse">Browse Our Movies</h1>
-        {/* <label  onClick={() => onSearch()} name='search' className="label" htmlFor='search'>
-         <input className="input" type="text" value={searchId || ''} onChange={(event) => setSearchId(event.target.value) } placeholder="Search by Keyword"/>
-         <img className="icon" src="Assets/search icon.png" alt=""/>
-         </label> */}
-        <label
+ 
+ <form action="">
+ <label
           onClick={() => onSearch()}
           name="search"
           className="label"
           htmlFor="search"
         >
           <input
-            onClick={() => onSearch()}
-            onKeyUp={(e) => {
-              console.log(e);
-              if (e.code === "Enter") {
-                setSearchId(e.target.value);
-              }
-            }}
             className="input"
             type="text"
             value={searchId || ""}
             onChange={(event) => setSearchId(event.target.value)}
             placeholder="Search by Keyword"
+            onKeyDown={(e) => {
+              console.log(e);
+              if (e.code === "Enter") {
+                setSearchId(e.target.value);
+              }
+            }}
           />
-          <img className="icon" src="Assets/search icon.png" alt="" />
+          <button className="srch-btn" onClick={onSearch}>
+            {" "}
+            <SearchIcon className="srch" />{" "}
+          </button>
         </label>
+ </form>
       </div>
 
       <div className="search__results">
@@ -107,7 +106,8 @@ const Movies = () => {
                 return (
                   <div className="user-card">
                     <div className="user-card__container">
-                      <img className="imgs"
+                      <img
+                        className="imgs"
                         src={post.Poster}
                         alt={`Poster for ${post.Poster}`}
                       />

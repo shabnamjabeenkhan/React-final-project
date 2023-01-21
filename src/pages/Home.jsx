@@ -1,7 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import SearchIcon from "@mui/icons-material/Search";
 
 export default function Home() {
+  const [movieName, setMovieName] = useState("");
+  const navigate = useNavigate();
+
+
+
+  function onSearch() {
+    navigate(`/movies/${movieName}`);
+  }
+
   return (
     <>
       <div className="bg_color">
@@ -17,14 +27,15 @@ export default function Home() {
               </Link>
             </li>
             <li>
-              <Link
+              {/* <Link
                 to="movies"
+                // {`/movies/${movieName}`}
                 className="nav__link--anchor
                 link__hover-effect
                 link__hover-effect--white "
               >
                 Find your movie
-              </Link>
+              </Link> */}
             </li>
             <li>
               <a
@@ -37,16 +48,29 @@ export default function Home() {
             </li>
           </ul>
         </nav>
+
         <h1 className="browse">Browse Our Movies</h1>
-        <label className="label" htmlFor="search">
+    <form action="">
+    <label className="label" htmlFor="search">
           <input
+            onChange={(e) => setMovieName(e.target.value)}
             name="search"
             className="input"
             type="text"
             placeholder="Search by Keyword"
+            onKeyDown={(e) => {
+              console.log(e);
+              if (e.code === "Enter") {
+                setMovieName(e.target.value);
+              }
+            }} 
           />
-          <img className="icon" src="Assets/search icon.png" alt="" />
+          <button className="srch-btn" onClick={onSearch}>
+            {" "}
+            <SearchIcon />{" "}
+          </button>
         </label>
+    </form>
       </div>
     </>
   );

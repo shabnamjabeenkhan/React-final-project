@@ -144,6 +144,12 @@ nav {
     justify-content: flex-end; */
 }
 
+.srch-btn{
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
 .input {
   border: none;
   display: flex;
@@ -151,6 +157,7 @@ nav {
   align-items: center;
   font-size: 20px;
   padding-right: 200px;
+  outline-width: 0;
 }
 
 /*SECTION TWO*/

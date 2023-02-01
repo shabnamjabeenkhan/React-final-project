@@ -16,7 +16,9 @@ export default function Home() {
     <>
       <div className="bg_color">
         <nav>
-          <div className="main--title">MOVIES</div>
+
+          <div className="main--title"> MOVIES</div>
+
           <ul className="nav__link--lists">
             <li>
               <Link

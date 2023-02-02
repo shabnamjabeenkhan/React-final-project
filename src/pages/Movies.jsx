@@ -1,24 +1,26 @@
-import React from "react"
-import { useEffect, useState } from "react"
-import axios from "axios"
-import { Link, useParams } from "react-router-dom"
+import React from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { Link, useParams } from "react-router-dom";
 
-import SearchIcon from "@mui/icons-material/Search"
+import SearchIcon from "@mui/icons-material/Search";
 
 const Movies = () => {
-  const [posts, setPosts] = useState({})
-  const { id } = useParams()
-  const [searchId, setSearchId] = useState("")
+  const [posts, setPosts] = useState({});
+  const { id } = useParams();
+  const [searchId, setSearchId] = useState("");
 
   async function fetchPosts() {
-    const { data } = await axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=8e3ddd4c&s=${searchId || id}`)
-    console.log(searchId, id)
-    setPosts(data)
+    const { data } = await axios.get(
+      `http://www.omdbapi.com/?i=tt3896198&apikey=8e3ddd4c&s=${searchId || id}`
+    );
+    console.log(searchId, id);
+    setPosts(data);
   }
 
   useEffect(() => {
-    fetchPosts()
-  }, [])
+    fetchPosts();
+  }, []);
 
   return (
     <>
@@ -27,7 +29,10 @@ const Movies = () => {
           <div className="main--title">MOVIES</div>
           <ul className="nav__link--lists">
             <li>
-              <Link to="/" className="nav__link--anchor link__hover-effect link__hover-effect--white">
+              <Link
+                to="/"
+                className="nav__link--anchor link__hover-effect link__hover-effect--white"
+              >
                 Home
               </Link>
             </li>
@@ -55,7 +60,12 @@ const Movies = () => {
         <h1 className="browse">Browse Our Movies</h1>
 
         <div>
-          <label onClick={fetchPosts} name="search" className="label" htmlFor="search">
+          <label
+            onClick={fetchPosts}
+            name="search"
+            className="label"
+            htmlFor="search"
+          >
             <input
               className="input"
               type="text"
@@ -63,7 +73,7 @@ const Movies = () => {
               placeholder="Search by Keyword"
               onKeyDown={(e) => {
                 if (e.code === "Enter") {
-                  fetchPosts()
+                  fetchPosts();
                 }
               }}
             />
@@ -87,7 +97,11 @@ const Movies = () => {
                 return (
                   <div className="user-card">
                     <div className="user-card__container">
-                      <img className="imgs" src={post.Poster} alt={`Poster for ${post.Poster}`} />
+                      <img
+                        className="imgs"
+                        src={post.Poster}
+                        alt={`Poster for ${post.Poster}`}
+                      />
                       <p>
                         Title: <b>{post.Title}</b>
                       </p>
@@ -99,14 +113,14 @@ const Movies = () => {
                       </p>
                     </div>
                   </div>
-                )
+                );
               })}
             </div>
           </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Movies
+export default Movies;

@@ -6,8 +6,6 @@ export default function Home() {
   const [movieName, setMovieName] = useState("");
   const navigate = useNavigate();
 
-
-
   function onSearch() {
     navigate(`/movies/${movieName}`);
   }
@@ -16,7 +14,6 @@ export default function Home() {
     <>
       <div className="bg_color">
         <nav>
-
           <div className="main--title"> MOVIES</div>
 
           <ul className="nav__link--lists">
@@ -52,27 +49,27 @@ export default function Home() {
         </nav>
 
         <h1 className="browse">Browse Our Movies</h1>
-    <form action="">
-    <label className="label" htmlFor="search">
-          <input
-            onChange={(e) => setMovieName(e.target.value)}
-            name="search"
-            className="input"
-            type="text"
-            placeholder="Search by Keyword"
-            onKeyDown={(e) => {
-              console.log(e);
-              if (e.code === "Enter") {
-                setMovieName(e.target.value);
-              }
-            }} 
-          />
-          <button className="srch-btn" onClick={onSearch}>
-            {" "}
-            <SearchIcon />{" "}
-          </button>
-        </label>
-    </form>
+        <form action="">
+          <label className="label" htmlFor="search">
+            <input
+              onChange={(e) => setMovieName(e.target.value)}
+              name="search"
+              className="input"
+              type="text"
+              placeholder="Search by Keyword"
+              onKeyDown={(e) => {
+                console.log(e);
+                if (e.code === "Enter") {
+                  setMovieName(e.target.value);
+                }
+              }}
+            />
+            <button className="srch-btn" onClick={onSearch}>
+              {" "}
+              <SearchIcon />{" "}
+            </button>
+          </label>
+        </form>
       </div>
     </>
   );

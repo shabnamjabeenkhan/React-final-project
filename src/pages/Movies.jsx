@@ -12,7 +12,7 @@ const Movies = () => {
 
   async function fetchPosts() {
     const { data } = await axios.get(
-      `http://www.omdbapi.com/?i=tt3896198&apikey=8e3ddd4c&s=${searchId || id}`
+      `https://www.omdbapi.com/?i=tt3896198&apikey=8e3ddd4c&s=${searchId || id}`
     );
     console.log(searchId, id);
     setPosts(data);

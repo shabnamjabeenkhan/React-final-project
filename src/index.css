@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
+ width: 100%;
 }
 
 li {
@@ -34,6 +35,11 @@ a {
 .link__hover-effect:hover::after {
   width: 100%;
   left: 0;
+}
+
+
+.nav__link--anchor-link__hover-effect-link__hover-effect--white{
+  margin: -20px;
 }
 
 /* NAVIGATION */

@@ -43,7 +43,7 @@ const Movies = () => {
          link__hover-effect
          link__hover-effect--white "
               >
-                Find your movie
+                Find Your Movie
               </a>
             </li>
             <li>

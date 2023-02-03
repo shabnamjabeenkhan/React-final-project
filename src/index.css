@@ -36,7 +36,7 @@ nav{
 
 a{
   color: white;
-  font-size: 32px;
+  font-size: 27px;
   font-weight: 600;
   padding: 0 16px;
   text-decoration: none;
@@ -110,7 +110,7 @@ a {
   font-weight: 600;
 }
 
-.contact__btn {
+.contact-Sbtn {
   font-weight: 400;
   font-size: 16px;
   text-transform: uppercase;
@@ -327,3 +327,25 @@ img {
 .user-card:nth-child(n+6) {
   display: none;
 }
+
+
+
+/*  Media Queries */
+
+ @media (max-width: 1335px) {
+  a{
+   font-size: 20px;
+  }
+  .main--title{
+    font-size: 53px;
+  }
+} 
+
+@media (max-width: 1122px) {
+  a{
+   font-size: 10px;
+  }
+  .main--title{
+    font-size: 43px;
+  }
+} 

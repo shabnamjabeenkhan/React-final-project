@@ -4,17 +4,22 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
 import SearchIcon from "@mui/icons-material/Search";
+import { Skeleton } from "@mui/material";
 
 const Movies = () => {
   const [posts, setPosts] = useState({});
   const { id } = useParams();
   const [searchId, setSearchId] = useState("");
+  const[loading, setLoading] = useState(true)
 
   async function fetchPosts() {
     const { data } = await axios.get(
       `https://www.omdbapi.com/?i=tt3896198&apikey=8e3ddd4c&s=${searchId || id}`
     );
     console.log(searchId, id);
+    setTimeout(() => {
+    setLoading(false)
+    }, 2000)
     setPosts(data);
   }
 
@@ -88,8 +93,13 @@ const Movies = () => {
             <div className="user">
               {posts.Search?.map((post, index) => {
                 return (
+                  
                   <div className="user-card">
-                    <div className="user-card__container">
+                       {
+              loading ? (
+                <Skeleton height={"300px"}/>
+              ) : (
+                   <div className="user-card__container">
                       <img
                         className="imgs"
                         src={post.Poster}
@@ -105,6 +115,9 @@ const Movies = () => {
                         Year: <b>{post.Year}</b>
                       </p>
                     </div>
+              )
+            }
+                 
                   </div>
                 );
               })}

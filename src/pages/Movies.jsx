@@ -25,38 +25,31 @@ const Movies = () => {
   return (
     <>
       <div className="bg_color">
-        <nav>
-          <div className="main--title">MOVIES</div>
-          <ul className="nav__link--lists">
-            <li>
-              <Link
-                to="/"
-                className="nav__link--anchor link__hover-effect link__hover-effect--white"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <a
-                href=""
-                className="nav__link--anchor
+      <div>
+          <div className="nav">
+            <ul className="nav__link--lists">
+              <div className="main-title">MOVIES</div>
+              <li> <Link to="/">
+                <a  className="nav__link--anchor link__hover-effect link__hover-effect--white" href="">Home</a>
+                </Link>
+              </li>
+              <li >
+                <a className="nav__link--anchor
          link__hover-effect
-         link__hover-effect--white "
-              >
-                Find Your Movie
-              </a>
-            </li>
-            <li>
-              <a
-                href=""
-                className="nav__link--anchor
-         nav__link-anchor-primary"
-              >
-                <span className="contact__btn">Contact</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
+         link__hover-effect--white " href="">Browse Our Movies</a>
+              </li>
+              <li>
+                <a
+                  className="nav__link--anchor
+                nav__link-anchor-primary"
+                  href=""
+                >
+                  <span className="contact-btn">Contact</span>{" "}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
         <h1 className="browse">Browse Our Movies</h1>
 
         <div>

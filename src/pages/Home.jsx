@@ -12,6 +12,9 @@ export default function Home() {
 
   return (
     <>
+    <div className="container">
+
+   
       <div className="bg_color">
         <div>
           <div className="nav">
@@ -60,6 +63,7 @@ export default function Home() {
             </button>
           </label>
         </form>
+      </div>
       </div>
     </>
   );

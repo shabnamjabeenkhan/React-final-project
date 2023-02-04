@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
+
 }
 
 
@@ -266,7 +267,7 @@ nav {
 .user {
   width: 70%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 
@@ -336,7 +337,7 @@ img {
   a{
    font-size: 20px;
   }
-  .main--title{
+  .main-title{
     font-size: 53px;
   }
 } 
@@ -345,7 +346,98 @@ img {
   a{
    font-size: 10px;
   }
-  .main--title{
-    font-size: 43px;
+  .main-title{
+    font-size: 32px;
+  }
+  .browse{
+    font-size: 28px;
   }
 } 
+
+@media(max-width: 528px) {
+  .input{
+    font-size: 12px;
+  }
+}
+
+
+@media(max-width: 537px) {
+  .label{
+    width: 241px;
+  }
+}
+
+@media(max-width: 858px) {
+  .nav__link--anchor.link__hover-effect.link__hover-effect--white{
+    display: inline-block;
+  }
+}
+
+
+@media(max-width: 546px) {
+.input{
+  width: 0;
+}
+.srch-btn{
+  margin: -10px;
+}
+}
+
+
+@media(max-width: 841px) {
+  .bg_color{
+    display: inline-block;
+  }
+  }
+
+@media(max-width: 507px) {
+  .bg_color{
+    display: inline-block;
+  }
+  }
+
+  @media(max-width: 570px) {
+    .user{
+      padding-left: 70px;
+    }
+    }
+
+    @media(max-width: 440px) {
+      .user{
+        padding-left: 160px;
+      }
+      }
+
+      @media(max-width: 311px) {
+        .user{
+          padding-left: 278px;
+        }
+        }
+  
+
+
+/* @media(max-width: 915px) {
+.main-title{
+  padding-left: 80px;
+}
+  }
+
+
+  @media(max-width: 735px) {
+    .main-title{
+      padding-left: 305px;
+    }
+      }
+
+      @media(max-width: 482px) {
+        .main-title{
+          margin-left: 112px;
+        }
+          }
+
+          @media(max-width: 366px) {
+            .main-title{
+              margin-left: 240px;
+            }
+              }
+     */

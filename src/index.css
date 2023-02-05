@@ -437,7 +437,7 @@ img {
 
 
              @media(max-width: 375px) {
-              .nav__link--lists{
+              ul{
              display: block;
               }
               

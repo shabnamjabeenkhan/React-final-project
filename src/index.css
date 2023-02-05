@@ -10,9 +10,9 @@
 
 
 
-.main-section{
+/* .main-section{
   display: flex;
-}
+} */
 
 ul{
   display: flex;
@@ -305,6 +305,7 @@ nav {
 
 .container {
 width: 100%;
+
 }
 
 
@@ -375,14 +376,14 @@ img {
 }
 
 
-@media(max-width: 546px) {
+/* @media(max-width: 546px) {
 .input{
   width: 0;
-}
+} */
 .srch-btn{
   margin: -10px;
 }
-}
+
 
 
 @media(max-width: 841px) {
@@ -397,7 +398,7 @@ img {
   }
   }
 
-   @media(max-width: 673px) {
+   /* @media(max-width: 673px) {
     .user{
       padding-left: 128px;
     }
@@ -407,10 +408,10 @@ img {
       .user{
         padding-left: 200px;
       }
-      }
+      } */
 
 
-     @media(max-width: 440px) {
+     /* @media(max-width: 440px) {
       .user{
         padding-left: 160px;
       }
@@ -424,11 +425,70 @@ img {
           .user{
             padding-left: 508px;
           }
-          }   
+          }    */
 
 
-          @media(max-width: 480px) {
+          /* @media(max-width: 480px) {
             .container{
               max-width: 480px !important;
             }
-            }   
+            }    */
+
+
+
+             @media(max-width: 400px) {
+              .nav__link--lists{
+             display: block;
+              }
+              
+              }    
+
+
+              @media(max-width: 400px) {
+               a{
+               padding-bottom: 20px;
+              
+                }
+                
+                }    
+
+
+                @media(max-width: 400px) {
+                  .search__results{
+                 display: none;
+                   }
+                   
+                   }    
+
+
+                   @media(max-width: 400px) {
+                    ul{
+                  padding-left: 21px;
+                     }
+                     
+                     }    
+
+
+                     
+                   @media(max-width: 400px) {
+                    .input{
+                  padding: 8px;
+                     }
+                     
+                     }    
+
+                     @media(max-width: 400px) {
+                     li{
+                   
+                   display: flex;
+                   justify-content: center;
+                   align-items: center;
+                   padding-right: 30px;
+                       }
+                       
+                       }    
+
+
+                
+  
+

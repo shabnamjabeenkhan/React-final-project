@@ -436,9 +436,9 @@ img {
 
 
 
-             @media(max-width: 375px) {
+             @media(max-width: 475px) {
               ul{
-             display: block;
+             display: block !important;
               }
               
               }    

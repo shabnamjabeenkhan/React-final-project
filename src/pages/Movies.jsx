@@ -93,7 +93,7 @@ const Movies = () => {
       <div className="container">
         <div className="row">
           <div className="user-list">
-            <div className="main-section">
+           
             <div className="user">
               {posts.Search?.map((post, index) => {
                 return (
@@ -131,7 +131,7 @@ const Movies = () => {
         </div>
       </div>
       </div>
-      </div>
+    
     </>
   );
 };

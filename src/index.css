@@ -444,7 +444,7 @@ img {
               }    
 
 
-              @media(max-width: 375px) {
+              @media(max-width: 475px) {
                a{
                padding-bottom: 20px;
               
@@ -453,7 +453,7 @@ img {
                 }    
 
 
-                @media(max-width: 375px) {
+                @media(max-width: 475px) {
                   .search__results{
                  display: none;
                    }
@@ -461,7 +461,7 @@ img {
                    }    
 
 
-                   @media(max-width: 375px) {
+                   @media(max-width: 475px) {
                     ul{
                   padding-left: 21px;
                      }
@@ -470,14 +470,14 @@ img {
 
 
                      
-                   @media(max-width: 375px) {
+                   @media(max-width: 475px) {
                     .input{
                   padding: 8px;
                      }
                      
                      }    
 
-                     @media(max-width: 375px) {
+                     @media(max-width: 475px) {
                      li{
                    
                    display: flex;

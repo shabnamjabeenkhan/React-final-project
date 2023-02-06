@@ -370,7 +370,7 @@ img {
 }
 
 @media(max-width: 858px) {
-  .nav__link--anchor.link__hover-effect.link__hover-effect--white{
+  .nav__link--anchor.link__hover-effect.link__hover-effect--white {
     display: inline-block;
   }
 }
@@ -497,7 +497,19 @@ img {
                           }
                           
                           } 
+
+
+                          @media(max-width: 475px) {
+                         .home-list
+                            { 
+                          
+                   padding-left: 86px !important;
+                              }
+                              
+                              } 
+                       
                         
+
 
                       
   

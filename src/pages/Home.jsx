@@ -21,7 +21,7 @@ export default function Home() {
             <ul className="nav__link--lists">
               <div className="main-title">MOVIES</div>
               <li className="nav__link--anchor link__hover-effect link__hover-effect--white">
-                <a  className="nav__link--anchor link__hover-effect link__hover-effect--white" href="">Home</a>
+                <a  className="nav__link--anchor link__hover-effect link__hover-effect--white" href=""><span className="home-list">Home</span> </a>
               </li>
               <li >
                 <a className="nav__link--anchor

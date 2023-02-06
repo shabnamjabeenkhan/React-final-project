@@ -489,6 +489,14 @@ img {
                        }    
 
 
-                
+                       @media(max-width: 475px) {
+                        .nav__link--anchor.link__hover-effect.link__hover-effect--white{
+                      
+                    display: flex;
+                          }
+                          
+                          } 
+
+                      
   
 
